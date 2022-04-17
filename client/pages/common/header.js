@@ -13,7 +13,10 @@ function HeaderComponent(){
             </ul>
             <ul className={"nav navbar-right"}>
                 <li className={"nav-item"}>
-                    <a className={"nav-link h4"} >로그인</a>
+                    <a className={"nav-link h4"} href="/user/signin">SignIn</a>
+                </li>
+                <li className={"nav-item"}>
+                    <a className={"nav-link h4"} href="/user/join">Join</a>
                 </li>
             </ul>
         </header>

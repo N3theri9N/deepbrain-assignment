@@ -21,7 +21,7 @@ export default function signin () {
     }
 
     return <div>
-        <div className={"border-bottom"}>
+        <div className={"border-bottom mt-4 mb-4"}>
             <h2 className="bd-title" id="content">Sign in</h2>
         </div>
         <br/>

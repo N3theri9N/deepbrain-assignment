@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 
-export default function register () {
+export default function join () {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [confirmPassword, setConfirmPassword] = useState("");
@@ -21,8 +21,8 @@ export default function register () {
     }
 
     return <div>
-        <div className={"border-bottom"}>
-            <h2 className="bd-title" id="content">Register</h2>
+        <div className={"border-bottom mt-4 mb-4"}>
+            <h2 className="bd-title" id="content">Join</h2>
         </div>
         <br/>
         <form>

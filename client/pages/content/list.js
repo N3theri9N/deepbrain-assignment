@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function list () {
     return <div>
-        <div className={"border-bottom"}>
+        <div className={"border-bottom mt-4 mb-4"}>
             <h2 className="bd-title" id="content">Content List</h2>
         </div>
         <br/>
@@ -14,7 +14,7 @@ export default function list () {
             </thead>
             <tbody>
             <tr>
-                <td>데이터가 존재하지 않습니다.</td>
+                <td>Data Empty</td>
             </tr>
             </tbody>
         </table>
