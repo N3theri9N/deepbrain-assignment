@@ -1,7 +1,14 @@
 ## 실행하기
-- Client : ./client/ 경로에서 yarn start
+- Client : ./client/ 경로에서 yarn dev
 - Server : ./server/ 경로에서 yarn start
+실제 서비스할땐 next 일 경우는 next build 한 다음 next start 한다. 
 
+## lib 구성
+- Client
+    
+    - UI 스타일 : Bootstrap 
+    
+- Server
 
 
 
