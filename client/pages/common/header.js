@@ -5,7 +5,7 @@ function HeaderComponent(){
         <header className={"navbar navbar-expand-lg navbar-light bg-light"}>
             <ul className={"nav"}>
                 <li className={"nav-item"}>
-                    <a className="nav-link h4" href="/">Home</a>
+                    <a className="nav-link h4" href="/">Next Home</a>
                 </li>
                 <li className={"nav-item"}>
                     <a className="nav-link h4" href="/content/list">Contents</a>

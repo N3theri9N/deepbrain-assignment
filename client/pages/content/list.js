@@ -19,12 +19,12 @@ export default function list () {
         <table className="table">
             <thead>
             <tr>
-                <th scope="col">header</th>
+                <th scope="col">테이블 헤더</th>
             </tr>
             </thead>
             <tbody>
             <tr id={"tableRow"}>
-                <td>Data Empty</td>
+                <td>데이터가 비어있습니다!</td>
             </tr>
             </tbody>
         </table>
