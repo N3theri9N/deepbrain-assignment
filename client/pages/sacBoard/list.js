@@ -13,7 +13,7 @@ export default function list () {
 
     return <div>
         <div className={"border-bottom mt-4 mb-4"}>
-            <h2 className="bd-title" id="content">Content List</h2>
+            <h2 className="bd-title" id="content">2018. Seoul Art Center</h2>
         </div>
         <br/>
         <table className="table">
@@ -24,7 +24,7 @@ export default function list () {
             </thead>
             <tbody>
             <tr id={"tableRow"}>
-                <td>데이터가 비어있습니다!</td>
+                <td>데이터는 추후에 추가 예정입니다!</td>
             </tr>
             </tbody>
         </table>

@@ -8,12 +8,12 @@ function HeaderComponent(){
                     <a className="nav-link h4" href="/">Next Home</a>
                 </li>
                 <li className={"nav-item"}>
-                    <a className="nav-link h4" href="/content/list">Contents</a>
+                    <a className="nav-link h4" href="/sacBoard/list">Board</a>
                 </li>
             </ul>
             <ul className={"nav navbar-right"}>
                 <li className={"nav-item"}>
-                    <a className={"nav-link h4"} href="/user/signin">SignIn</a>
+                    <a className={"nav-link h4"} href="/user/login">Login</a>
                 </li>
                 <li className={"nav-item"}>
                     <a className={"nav-link h4"} href="/user/join">Join</a>

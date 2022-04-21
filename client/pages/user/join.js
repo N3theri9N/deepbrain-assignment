@@ -34,7 +34,7 @@ export default function join () {
                 <label>comfirm password</label>
                 <input className="form-control" type={'password'} value={confirmPassword} onChange={confirmPasswordHandler} />
                 <br/>
-                <button className="btn btn-primary" type={'submit'} onSubmit={submitHandler}>
+                <button className="btn btn-primary" type={'submit'} onClick={submitHandler}>
                     register
                 </button>
             </div>

@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 
-
-export default function signin () {
+export default function login () {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
 
@@ -10,9 +9,6 @@ export default function signin () {
     }
     const passwordHandler = event => {
         setPassword(event.currentTarget.value);
-    }
-    const confirmPasswordHandler = event => {
-        setConfirmPassword(event.currentTarget.value);
     }
 
     const submitHandler = event => {
@@ -32,7 +28,7 @@ export default function signin () {
                 <label>password</label>
                 <input className="form-control" type={'password'} value={password} onChange={passwordHandler} />
                 <br/>
-                <button className="btn btn-primary" type={'submit'} onSubmit={submitHandler}>
+                <button className="btn btn-primary" type={'submit'} onClick={submitHandler}>
                     signin
                 </button>
             </div>
