@@ -1,15 +1,26 @@
 ## 실행하기
 - Client : ./client/ 경로에서 yarn dev
-- Server : ./server/ 경로에서 yarn start
+    - port : 3000
+- Server : ./server/ 경로에서 yarn start 
+    - port : 4000
+    
 실제 서비스할땐 next 일 경우는 next build 한 다음 next start 한다. 
 
 ## lib 구성
 - Client
-    
-    - UI 스타일 : Bootstrap 
-    
+    - Bootstrap : css 프레임워크
+    - react / react-dom / react-bootstrap : 뷰 라이브러리
+    - next : node js 기반 프레임 워크
+    - axios : 비동기 호출 라이브러리
 - Server
-
+    - cors : cors 화이트리스트 대응
+    - express : node js 기반 프레임 워크
+    - mongoose : mongoDB crud 지원 라이브러리
+    - nodemon : node 기반 소스코드 자동갱신
+    
+## 서버에 들어간 내용
+- 2018년도 예술의 전당 공연, 입장 수 ( 1173 rows ) 
+- server/contents/csv/SeoulArtCenter2018.csv
 
 
 ---
