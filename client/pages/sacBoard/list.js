@@ -5,15 +5,22 @@ export default function list () {
     const proxy = 'http://localhost:4000'
 
     const loadsacData = () => {
-
         axios.get(`${proxy}/sac/0`).then((res) => {
             console.log(res.data); // http://localhost:4000/sac/0 호출 결과를 리턴
         });
     }
 
+    const relocateRegister = () => {
+        location.href = "./register";
+    }
+
     return <div>
         <div className={"border-bottom mt-4 mb-4"}>
             <h2 className="bd-title" id="content">2018. Seoul Art Center</h2>
+        </div>
+        <div className={"btn-group"}>
+            <input type={"button"} className={"btn btn-danger"} onClick={loadsacData} value={"호출 테스트"} />
+            <input type={"button"} className={"btn btn-primary"} onClick={relocateRegister} value={"추가"} />
         </div>
         <br/>
         <table className="table">
@@ -28,7 +35,6 @@ export default function list () {
             </tr>
             </tbody>
         </table>
-        <input type={"button"} onClick={loadsacData} value={"내용 호출 테스트"} />
 
     </div>
 }
