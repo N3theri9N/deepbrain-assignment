@@ -2,12 +2,13 @@
 import { PayloadAction } from '@reduxjs/toolkit'
 import { call, delay, put, takeLatest } from 'redux-saga/effects'
 import { sacActions } from '../reducers/sacReducer.ts';
-import {sacRegistApi, sacRegisterApi} from '../api/sacApi.ts'
+import {sacRegistApi, sacEditApi } from '../api/sacApi.ts'
 
 
 export interface SacRegistType {
     type : string,
     payload : {
+        _id : string;
         place : string;
         title : string;
         type : string;
@@ -25,7 +26,6 @@ interface SacRegistSuccessType{
     }
 }
 
-
 export function* sacRegist(sac : SacRegistType){
     try {
         const response: SacRegistSuccessType = yield sacRegistApi(sac.payload)
@@ -37,4 +37,17 @@ export function* sacRegist(sac : SacRegistType){
 
 export function* watchRegist() {
     yield takeLatest(sacActions.registRequest, sacRegist);
+}
+
+export function* sacEdit(sac : SacRegistType){
+    try {
+        const response: SacRegistSuccessType = yield sacEditApi(sac.payload)
+        yield put(sacActions.editSuccess(response))
+    } catch( error ) {
+        yield put(sacActions.editFailure(error))
+    }
+}
+
+export function* watchEdit() {
+    yield takeLatest(sacActions.editRequest, sacEdit);
 }

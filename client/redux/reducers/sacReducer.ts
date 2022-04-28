@@ -29,14 +29,45 @@ const sacSlice = createSlice({
             state.loading = true;
         },
         registSuccess(state: SacState, {payload}){
+            alert("등록 완료");
             state.data = [...state.data, payload]
             state.loading = false;
+            location.href = "./list"
         },
         registFailure(state: SacState, {payload}){
             alert("등록에 실패했습니다.");
             state.data = payload;
             state.loading = false;
+        },
+        editRequest(state : SacState, payload){
+            state.loading = true;
+        },
+        editSuccess(state: SacState, {payload}) {
+            alert("수정 완료");
+            state.data = [...state.data, payload]
+            state.loading = false;
+            location.href = "./list"
+        },
+        editFailure(state: SacState, {payload}) {
+            alert("수정에 실패했습니다.");
+            state.data = payload;
+            state.loading = false;
+        },
+        delRequest(state : SacState, payload){
+            state.loading = true;
+        },
+        delSuccess(state: SacState, {payload}) {
+            alert("삭제 완료");
+            state.data = [...state.data, payload]
+            state.loading = false;
+            location.reload();
+        },
+        delFailure(state: SacState, {payload}) {
+            alert("삭제에 실패했습니다.");
+            state.data = payload;
+            state.loading = false;
         }
+
     }
 })
 
