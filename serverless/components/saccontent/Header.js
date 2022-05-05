@@ -12,17 +12,20 @@ export function Header() {
 	const dispatch = useDispatch();
 
 	const logoutHandler = () => {
+		localStorage.removeItem("user")
 		dispatch(logoutUser());
 		router.push("/user/login");
 	}
 
+
+
 	useEffect(() => {
-		console.log(userState);
-		console.log(userState.isLoggined);
-		if ( userState.isLoggined == false) {
+		const loginData = JSON.parse(localStorage.getItem("user"));
+		if(!loginData || !loginData.id){
+			localStorage.removeItem("user")
 			router.push("/user/login");
 		}
-	}, [])
+	}, )
 
 	return (
 		<header className="header">

@@ -47,15 +47,14 @@ function* loginUser(action){
         })
 
         if(response.status == 200){
+            localStorage.setItem("user", JSON.stringify(action.payload));
             const newUser = yield response.json();
             yield put({
                 type: t.LOGIN_SUCCESS,
                 payload: newUser.data,
             })
 
-//            window.history.push('/sacContent')
-//            window.history.pushState({},'',"/sacContent")
-//            window.location.reload();
+            //yield put(window.location.href = "/sacContent");
         } else {
             alert("가입한 ID 가 없거나 PW가 맞지 않습니다.");
         }

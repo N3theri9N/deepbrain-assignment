@@ -5,7 +5,7 @@ import { useRouter } from "next/router";
 
 export function LoginForm(){
     const router = useRouter();
-    const userState = useSelector((state) => state.user);
+
     const { register, handleSubmit } = useForm();
     const dispatch = useDispatch();
 
