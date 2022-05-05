@@ -1,6 +1,32 @@
+import {useDispatch } from "react-redux";
+import {useForm} from "react-hook-form";
+import { signInUser } from "@/modules";
+
 export function SigninForm(){
+
+    const { register, handleSubmit } = useForm();
+    const dispatch = useDispatch();
+
+    const onSubmitHandler = (data) => {
+
+        if(data){
+            if(data.pw !== data.cpw){
+                alert("입력된 암호와 확인 암호가 다릅니다!");
+            }
+            var joinUser = {
+                "id" : data.id,
+                "email" : data.email,
+                "pw" : data.pw
+            }
+            dispatch(signInUser(joinUser));
+        }
+    }
+
     return (
-        <form className="form">
+        <form className="form"
+            onSubmit={handleSubmit(onSubmitHandler)}
+            noValidate
+        >
             <div className={"form__element"}>
                 <label className={"label"} htmlFor="idInput">
                     id
@@ -10,7 +36,9 @@ export function SigninForm(){
                     id="idInput"
                     name="id"
                     placeholder="id"
-                    className="input" />
+                    className="input"
+                    ref={register({ required: true })}
+                />
             </div>
 
             <div className={"form__element"}>
@@ -22,7 +50,9 @@ export function SigninForm(){
                     id="emailInput"
                     name="email"
                     placeholder="email"
-                    className="input" />
+                    className="input"
+                    ref={register({ required : true })}
+                />
 
             </div>
 
@@ -33,9 +63,11 @@ export function SigninForm(){
                 <input
                     type="password"
                     id="pwInput"
-                    name="email"
+                    name="pw"
                     placeholder="password"
-                    className="input" />
+                    className="input"
+                    ref={register({ required : true })}
+                />
             </div>
 
             <div className={"form__element"}>
@@ -45,9 +77,11 @@ export function SigninForm(){
                 <input
                     type="password"
                     id="pwConfirmInput"
-                    name="email"
+                    name="cpw"
                     placeholder="password confirm"
-                    className="input" />
+                    className="input"
+                    ref={register({ required : true })}
+                />
             </div>
 
             <div className="form__action">

@@ -18,7 +18,8 @@ export default async (req, res) => {
                 });
             } catch (error) {
                 return res.status(400).json({
-                    success : false
+                    success : false,
+                    message : "가입이 실패했습니다."
                 })
             }
         default:

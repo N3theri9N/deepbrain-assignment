@@ -14,5 +14,9 @@ export default function* rootSaga() {
         watchAddSacContent(),
         watchRemoveSacContent(),
         watchUpdateSacContent(),
+
+        watchSignInUser(),
+        watchLogin(),
+//        watchLogout()
     ]);
 }

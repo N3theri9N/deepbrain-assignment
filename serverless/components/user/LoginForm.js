@@ -1,6 +1,23 @@
+import { useDispatch } from "react-redux";
+import { useForm } from "react-hook-form";
+import { loginUser } from "@/modules";
+
 export function LoginForm(){
+
+    const { register, handleSubmit } = useForm();
+    const dispatch = useDispatch();
+
+    const onSubmitHandler = (data) => {
+        if(data){
+            dispatch(loginUser(data));
+        }
+    }
+
     return (
-        <form className="form">
+        <form className="form"
+              onSubmit={handleSubmit(onSubmitHandler)}
+              noValidate
+        >
             <div className={"form__element"}>
                 <label className={"label"} htmlFor="idInput">
                     id
@@ -10,8 +27,9 @@ export function LoginForm(){
                     id="idInput"
                     name="id"
                     placeholder="id"
-                    className="input" />
-
+                    className="input"
+                    ref={register({ required: true })}
+                />
             </div>
 
             <div className={"form__element"}>
@@ -21,9 +39,11 @@ export function LoginForm(){
                 <input
                     type="password"
                     id="pwInput"
-                    name="email"
+                    name="pw"
                     placeholder="password"
-                    className="input" />
+                    className="input"
+                    ref={register({ required : true })}
+                />
             </div>
 
             <div className="form__action">
@@ -31,7 +51,6 @@ export function LoginForm(){
                     로그인
                 </button>
             </div>
-
         </form>
     );
 }

@@ -1,9 +1,17 @@
 export function Header() {
 
+
+	const UserTitle = () => {
+
+			return <span>LOGIN</span>
+		/*else
+			return <span>SIGN IN</span>*/
+	}
+
 	return (
 		<header className="header">
 			<h1 className="header__h1">
-				<span>LOGIN</span>
+				<UserTitle />
 			</h1>
 			<button
 				className="btn btn__primary btn__icon"

@@ -1,6 +1,6 @@
 import { HYDRATE } from "next-redux-wrapper";
 import * as t from "../types";
-import {LOGIN_SUCCESS} from "../types";
+import { LOGIN_SUCCESS } from "../types";
 
 const initialState = {
     loginUser : '',
