@@ -18,12 +18,12 @@ export function Header() {
 			</button>
 
 			<button
-				className="btn btn__primary btn__icon"
+				className="btn btn__primary"
 				onClick={() => {
 					dispatch(setModalOpen(true));
 				}}
 			>
-				<PersonAddSVG /> <span>생성</span>
+				<span>생성</span>
 			</button>
 		</header>
 	);

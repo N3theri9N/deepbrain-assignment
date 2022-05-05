@@ -16,6 +16,7 @@ export function Header() {
 			<button
 				className="btn btn__primary btn__icon"
 				onClick={() => {
+					location.href = "./join"
 				}}
 			>
 				가입

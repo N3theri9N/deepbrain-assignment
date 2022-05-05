@@ -13,18 +13,21 @@ function* signInUser(action){
 
         const newUser = yield response.json();
 
-        yield put({
-            type: t.SIGNIN_SUCCESS,
-            payload: newUser.data,
-        });
-        yield put(window.location.href = "./login");
+        if(response.status == 200) {
+            yield put({
+                type: t.SIGNIN_SUCCESS,
+                payload: newUser.data,
+            });
+            yield put(window.location.href = "./login");
+        } else {
+            alert("가입에 실패했습니다.");
+        }
 
     } catch (error) {
         yield put({
             type: t.SIGNIN_FAILURE,
             payload: error.message,
         });
-        yield put(alert("가입에 실패했습니다."))
     }
 }
 
@@ -42,11 +45,17 @@ function* loginUser(action){
             body: JSON.stringify(action.payload)
         })
 
-        const newUser = yield response.json();
-        yield put({
-            type: t.LOGIN_SUCCESS,
-            payload: newUser.data,
-        });
+        if(response.status == 200){
+            const newUser = yield response.json();
+            yield put({
+                type: t.LOGIN_SUCCESS,
+                payload: newUser.data,
+            });
+            yield put(window.location.href = "/sacContent");
+        } else {
+            alert("가입한 ID 가 없거나 PW가 맞지 않습니다.");
+        }
+
     } catch (error){
         yield put({
             type: t.LOGIN_FAILURE,

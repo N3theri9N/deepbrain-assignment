@@ -17,7 +17,7 @@ export default async (req, res) => {
                     data : user
                 });
             } catch (error) {
-                return res.status(400).json({
+                return res.status(401).json({
                     success : false,
                     message : "가입이 실패했습니다."
                 })

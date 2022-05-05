@@ -18,7 +18,7 @@ export default async (req, res) => {
                     data: user
                 })
             } else {
-                return res.status(302).json({
+                return res.status(401).json({
                     success: false,
                     message: "loginFailed"
                 });
