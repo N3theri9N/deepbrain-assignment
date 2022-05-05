@@ -11,7 +11,6 @@ export function SigninForm(){
                     name="id"
                     placeholder="id"
                     className="input" />
-
             </div>
 
             <div className={"form__element"}>
