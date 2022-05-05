@@ -1,17 +1,20 @@
+import { useRouter } from 'next/router'
+
 export function Header() {
+	const router = useRouter();
+	function Greeting() {
 
-
-	const UserTitle = () => {
-
-			return <span>LOGIN</span>
-		/*else
-			return <span>SIGN IN</span>*/
+		if (router.pathname.indexOf("login") > -1) {
+			return <span>LOGIN</span>;
+		}
+		return <span>SIGN IN</span>;
 	}
 
 	return (
 		<header className="header">
 			<h1 className="header__h1">
-				<UserTitle />
+				<Greeting />
+
 			</h1>
 			<button
 				className="btn btn__primary btn__icon"

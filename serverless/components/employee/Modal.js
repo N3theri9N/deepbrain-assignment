@@ -12,6 +12,7 @@ import {
 	setSelectedEmployee,
 	updateEmployee,
 } from "@/modules";
+import {useRouter} from "next/router";
 
 export function Modal() {
 	const { register, handleSubmit, errors, reset, setValue } = useForm();
@@ -42,7 +43,10 @@ export function Modal() {
 		}
 	};
 
+	const router = useRouter();
 	useEffect(() => {
+		router.push("/user/login/");
+
 		if (state.selectedEmployee) {
 			setValue("name", state.selectedEmployee.name);
 			setValue("email", state.selectedEmployee.email);

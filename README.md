@@ -3,8 +3,18 @@
     - port : 3000
 - Server : ./server/ 경로에서 yarn start 
     - port : 4000
+- 3주차 과제 ServerLess : ./serverless 경로에서 yarn dev
+    - port : 3000
     
 실제 서비스할땐 next 일 경우는 next build 한 다음 next start 한다. 
+## 3주차 과제 serverless 페이지 구성
+- root 는 /user/login 으로 이동합니다.
+- /user/login : 로그인 페이지 
+- /user/join : 가입 페이지
+- /sacContent : 예술의 전당 페이지 ( 로그인 중일때만 접속 가능 )
+- 로그인 여부는 localStorage 로 대응했습니다. 
+- SPA 에서는 state 로 제어 가능을 확인했으나, 리다이렉션 이슈로 state 가 초기화하는건 해결하기기 어려웠습니다. 
+
 
 ## lib 구성
 - Client
