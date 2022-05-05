@@ -17,6 +17,6 @@ export default function* rootSaga() {
 
         watchSignInUser(),
         watchLogin(),
-//        watchLogout()
+        watchLogout()
     ]);
 }

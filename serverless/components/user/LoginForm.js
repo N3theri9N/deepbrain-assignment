@@ -1,15 +1,18 @@
-import { useDispatch } from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 import { useForm } from "react-hook-form";
 import { loginUser } from "@/modules";
+import { useRouter } from "next/router";
 
 export function LoginForm(){
-
+    const router = useRouter();
+    const userState = useSelector((state) => state.user);
     const { register, handleSubmit } = useForm();
     const dispatch = useDispatch();
 
     const onSubmitHandler = (data) => {
         if(data){
             dispatch(loginUser(data));
+            router.push("/sacContent")
         }
     }
 

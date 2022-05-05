@@ -18,6 +18,7 @@ function* signInUser(action){
                 type: t.SIGNIN_SUCCESS,
                 payload: newUser.data,
             });
+
             yield put(window.location.href = "./login");
         } else {
             alert("가입에 실패했습니다.");
@@ -50,8 +51,11 @@ function* loginUser(action){
             yield put({
                 type: t.LOGIN_SUCCESS,
                 payload: newUser.data,
-            });
-            yield put(window.location.href = "/sacContent");
+            })
+
+//            window.history.push('/sacContent')
+//            window.history.pushState({},'',"/sacContent")
+//            window.location.reload();
         } else {
             alert("가입한 ID 가 없거나 PW가 맞지 않습니다.");
         }
@@ -66,4 +70,13 @@ function* loginUser(action){
 
 export function* watchLogin(){
     yield takeLatest(t.LOGIN_REQUESTED, loginUser);
+}
+
+
+function* logoutUser(action) {
+    yield put({ type: t.LOGOUT_SUCCESS });
+}
+
+export function* watchLogout(){
+    yield takeLatest(t.LOGOUT_REQUESTED, logoutUser);
 }

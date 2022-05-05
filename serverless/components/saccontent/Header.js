@@ -1,9 +1,28 @@
-import { useDispatch } from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 import { PersonAddSVG } from "@/icons";
-import { setModalOpen } from "@/modules";
+import { setModalOpen, logoutUser } from "@/modules";
+import { useRouter } from 'next/router'
+import {useEffect} from "react";
 
 export function Header() {
+
+	const userState = useSelector((state) => state.user);
+
+	const router = useRouter();
 	const dispatch = useDispatch();
+
+	const logoutHandler = () => {
+		dispatch(logoutUser());
+		router.push("/user/login");
+	}
+
+	useEffect(() => {
+		console.log(userState);
+		console.log(userState.isLoggined);
+		if ( userState.isLoggined == false) {
+			router.push("/user/login");
+		}
+	}, [])
 
 	return (
 		<header className="header">
@@ -12,7 +31,7 @@ export function Header() {
 			</h1>
 			<button
 				className="btn btn__primary"
-				onClick={()=>{ location.href = "../user/login"}}
+				onClick={logoutHandler}
 			>
 				로그아웃
 			</button>

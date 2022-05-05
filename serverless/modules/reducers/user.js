@@ -1,6 +1,5 @@
 import { HYDRATE } from "next-redux-wrapper";
 import * as t from "../types";
-import { LOGIN_SUCCESS } from "../types";
 
 const initialState = {
     loginUser : '',
@@ -15,7 +14,10 @@ const mainReducer = (state = initialState, action) => {
             return { ...state, ...action.payload };
         case t.LOGIN_SUCCESS :
             return {
-                ...state
+                loginUser : action.payload.id,
+                loginError : null,
+                isLoggined : true,
+                token : ''
             }
         case t.LOGOUT_SUCCESS :
             return {
