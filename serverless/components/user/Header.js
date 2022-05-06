@@ -7,7 +7,7 @@ export function Header() {
 		if (router.pathname.indexOf("login") > -1) {
 			return <span>LOGIN</span>;
 		}
-		return <span>SIGN IN</span>;
+		return <span>SIGN UP</span>;
 	}
 
 	return (
